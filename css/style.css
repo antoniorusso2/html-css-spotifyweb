@@ -31,15 +31,23 @@ custom properties
   --sidebar-color: #000000;
   --page-bg: #141922;
   --media-player: #282828;
+  --grey-text: #808080;
 }
 
 /* utilities */
 .white-text{
   color: white;
 }
+.grey-text{
+  color: var(--grey-text);
+}
 
-.xs-hidden{
+.xs-swap{
   display: none;
+}
+
+.uppercase{
+  text-transform: uppercase;
 }
 /* main rules */
 
@@ -47,6 +55,7 @@ custom properties
 logo
 */
 .logo-wrap{
+  padding-top: 25px;
   display: flex;
   align-items: center;
   column-gap: 10px;
@@ -76,9 +85,7 @@ page
   bottom: 0;
 }
 
-/* 
-sidebar
-*/
+/* sidebar*/
 .logo-sm{
   width: 40px;
   display: none;
@@ -86,10 +93,9 @@ sidebar
 .sidebar{
   background-color: var(--sidebar-color) ;
   width: 230px;
-  padding: 20px;
 }
 .sidebar>*{
-  margin-bottom: 25px;
+  padding: 15px;
 }
 
 .music-select{
@@ -100,13 +106,46 @@ sidebar
   background-color: var(--media-player);
 }
 
-/* sidebar icons */
+/*
+sidebar icons
+*/
 .user-icons{
   margin-bottom: 15px ;
-  width: 25px;
 }
- 
-/* debug */
+.user-menu a{
+  width: 100%;
+  color: var(--grey-text);
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+.user-menu a>img{
+  vertical-align: middle;
+  max-width: 25px;
+  display: inline-block;
+}
+
+.add-btn{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.plus{
+  color: #000000;
+  display: inline-block;
+  text-align: center;
+  background-color: var(--grey-text);
+  font-size: 40px;
+  width: 40px;
+  line-height: 40px;
+}
+
+.playlist-menu>*{
+  margin-bottom: 15px;
+}
+.playlist-menu ul>li{
+  margin-top: 25px;
+}
 
 
 
@@ -148,7 +187,16 @@ S-device
 XS-device
 */
 @media screen and (max-width: 575.98px) {
+  .xs-swap{
+    display: block;
+  }
+  .xs-hidden{
+    display: none;
+  }
   .sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 50px;
     padding: 5px;
   }
@@ -156,7 +204,10 @@ XS-device
   .logo{
     display: none;
   }
-  .xs-hidden{
-    display: block;
+  .logo-wrap{
+    padding: 5px;
+  }
+  .user-menu .user-icons{
+    width: 25px;
   }
 }
