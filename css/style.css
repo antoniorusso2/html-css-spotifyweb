@@ -16,6 +16,7 @@ img{
 }
 
 a{
+  font-size: 0.9rem;
   display: block;
   text-decoration: none;
   color: currentColor;
@@ -41,11 +42,6 @@ custom properties
 .grey-text{
   color: var(--grey-text);
 }
-
-.xs-swap{
-  display: none;
-}
-
 .uppercase{
   text-transform: uppercase;
 }
@@ -54,6 +50,9 @@ custom properties
 /* 
 logo
 */
+.logo{
+  width: 130px;
+}
 .logo-wrap{
   padding-top: 25px;
   display: flex;
@@ -81,7 +80,7 @@ page
 .media-player{
   width: 100%;
   height: 90px;
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
 }
 
@@ -93,9 +92,11 @@ page
 .sidebar{
   background-color: var(--sidebar-color) ;
   width: 230px;
+  display: flex;
+  flex-direction: column;
 }
 .sidebar>*{
-  padding: 15px;
+  padding: 1.2rem;
 }
 
 .music-select{
@@ -140,15 +141,43 @@ sidebar icons
   line-height: 40px;
 }
 
+/* playlists */
 .playlist-menu>*{
   margin-bottom: 15px;
 }
-.playlist-menu ul>li{
+.playlist-menu ul>.playlist-link{
   margin-top: 25px;
 }
 
-
-
+/* sidebar footer */
+.sidebar-footer{
+  margin-top: auto;
+}
+.sidebar-footer>*{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.install-app,
+.username{
+  margin: 0 1rem;
+}
+.sidebar-footer img{
+  width: 25px;
+}
+.download::after{
+  content: '';
+  display: block;
+  background-color: var(--grey-text);
+  width: 100%;
+  height: 2px;
+  margin: 1rem 0;
+}
+.icon{
+  background-color: var(--grey-text);
+  border-radius: 9999px;
+  padding: 0.4rem;
+}
 
 
 /***************************
@@ -158,8 +187,8 @@ media query
 /* 
 XL-device
 */
-@media screen and (max-width: 1399.98px) {
-  
+@media screen and (min-width: 1399.98px) {
+ 
 }
 
 /* 
@@ -200,6 +229,10 @@ XS-device
     width: 50px;
     padding: 5px;
   }
+  .sidebar .user-menu,
+  .sidebar .sidebar-footer{
+    padding: 1rem 0;
+  }
 
   .logo{
     display: none;
@@ -207,7 +240,18 @@ XS-device
   .logo-wrap{
     padding: 5px;
   }
-  .user-menu .user-icons{
+  .user-menu .user-icons,
+  .username,
+  .download{
     width: 25px;
+  }
+  .download::after{
+    display: none;
+  }
+  .download img{
+    max-width: 22px;
+  }
+  .user-section{
+    margin-top: 1rem;
   }
 }
