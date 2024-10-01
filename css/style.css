@@ -12,7 +12,7 @@ html{
 }
 img{
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
 a{
@@ -32,7 +32,21 @@ custom properties
   --page-bg: #141922;
   --media-player: #282828;
 }
+
+
+
 /* main rules */
+
+.logo-wrap{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  color: white;
+}
+.logo{
+  filter: invert(100%);
+}
 .page-wrap{
   height: 100vh;
   display: flex;
