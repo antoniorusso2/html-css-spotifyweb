@@ -33,20 +33,32 @@ custom properties
   --media-player: #282828;
 }
 
+/* utilities */
+.white-text{
+  color: white;
+}
 
-
+.xs-hidden{
+  display: none;
+}
 /* main rules */
 
+/* 
+logo
+*/
 .logo-wrap{
-  padding: 20px;
   display: flex;
   align-items: center;
   column-gap: 10px;
   color: white;
 }
-.logo{
-  filter: invert(100%);
+.logo-wrap a{
+  width: 100%;
 }
+
+/* 
+page
+*/
 .page-wrap{
   height: 100vh;
   display: flex;
@@ -64,18 +76,34 @@ custom properties
   bottom: 0;
 }
 
+/* 
+sidebar
+*/
+.logo-sm{
+  width: 40px;
+  display: none;
+}
 .sidebar{
   background-color: var(--sidebar-color) ;
   width: 230px;
+  padding: 20px;
+}
+.sidebar>*{
+  margin-bottom: 25px;
 }
 
 .music-select{
   flex-grow: 1;
   background-color: var(--page-bg);
 }
-
 .media-player{
   background-color: var(--media-player);
+}
+
+/* sidebar icons */
+.user-icons{
+  margin-bottom: 15px ;
+  width: 25px;
 }
  
 /* debug */
@@ -122,5 +150,13 @@ XS-device
 @media screen and (max-width: 575.98px) {
   .sidebar{
     width: 50px;
+    padding: 5px;
+  }
+
+  .logo{
+    display: none;
+  }
+  .xs-hidden{
+    display: block;
   }
 }
