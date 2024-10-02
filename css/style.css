@@ -81,6 +81,9 @@ media player sidebars
   display: flex;
   justify-content: space-between;
 }
+.track{
+  flex-shrink: 0;
+}
 /* 
 left
 */
@@ -305,15 +308,6 @@ M-device
 S-device
 */
 @media screen and (max-width: 767.98px) {
-  .debug .navbar{
-    max-width: 100%;
-   }
-}
-
-/* 
-XS-device
-*/
-@media screen and (max-width: 575.98px) {
   .xs-swap{
     display: block;
   }
@@ -351,5 +345,13 @@ XS-device
   }
   .user-section{
     margin-top: 1rem;
+  }
+
+  /* media player left side */
+  .track{
+    width: 24px;
+  }
+  .track-title{
+    font-size: 12px;
   }
 }
