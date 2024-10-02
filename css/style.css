@@ -28,7 +28,6 @@ button{
   background-color: transparent;
   color: currentColor;
   border: none;
-  font-size: 24px;
 }
 
 /*****************************************
@@ -63,6 +62,17 @@ custom properties
   display: flex;
 }
 
+
+/***************************************************
+media player sidebars
+***************************************************/
+.volume,
+.full-bar{
+  background-color: var(--grey-text);
+  height: 3px;
+  width: 120px;
+}
+
 /* media player */
 .media-player{
   width: 100%;
@@ -71,20 +81,9 @@ custom properties
   display: flex;
   justify-content: space-between;
 }
-.player{
-  width: 45%;
-}
-.player-controls{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  padding: 10px 0;
-}
-.fa-circle-play{
-  margin: 0 10px;
-  font-size: 32px;
-}
+/* 
+left
+*/
 .now-playing{
   padding: 0 12px;
   width: 230px;
@@ -99,10 +98,36 @@ custom properties
 .track-title{
   flex-grow: 1;
 }
-
-.audio-settings{
-  width: 250px; /*eliminare*/
+/* 
+center
+*/
+.player{
+  width: 45%;
 }
+.player-controls{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 0;
+}
+.player-controls button{
+  font-size: 24px;
+}
+.fa-circle-play{
+  margin: 0 10px;
+  font-size: 32px;
+}
+/* 
+right
+*/
+.audio-settings{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
 /* 
 song time
 */
@@ -113,9 +138,6 @@ song time
   gap: 1rem;
 }
 .full-bar{
-  background-color: var(--grey-text);
-  height: 2px;
-  width: 130px;
   flex-grow: 1;
 }
 
@@ -247,28 +269,7 @@ sidebar icons
   justify-content: flex-start;
   align-items: center;
 }
-.debug .navbar{
-  background-color: aqua;
-}
 
-.debug .player-track, 
-.debug .track-progress,
-.debug .audio-settings {
- border: 2px solid palevioletred;
-}
-
-
-.debug .subscribe{
-  text-align: right;
-  width: 100%;
-  padding: 3rem 1rem;
-  background-color: bisque;
-}
-
-
-.debug .audio-settings{
-  width: 200px;
-}
 /***************************
 media query 
 ****************************/
