@@ -36,6 +36,10 @@ section{
   width: 100%;
 }
 
+h2{
+  margin-bottom: 20px;
+}
+
 /***************************************************
 custom properties
 ***************************************************/
@@ -318,8 +322,11 @@ main content
 
 
 /* recentliy played section */
-.recently-played>*{
-  padding: 18px;
+section>*{
+  padding: 0 18px;
+}
+section>div{
+  margin: 20px 0;
 }
 
 /* collections */
@@ -345,10 +352,9 @@ card style
   margin-bottom: 5px;
 }
 
-.card:nth-child(2) .card-body{    /* !!! special rule for not let the 2nd card stretch based on her content ------- media query reset on 991px */
+.card>.card-body{    /* !!! special rule for not let the 2nd card stretch based on her content ------- media query reset on 991px */
   max-width: 300px;
 }
-/* ? debug */
 
 
 /***************************
@@ -371,24 +377,27 @@ L-device
   .debug .navbar{
     max-width: 100%;
   }
- 
+  .card{
+    flex-basis: calc(100%/4 - 30px);
+  }
    
 }
 
 /* 
 M-device
 */
-@media screen and (max-width: 991.98px) {
+@media screen and (max-width: 880.98px) {
   .debug .navbar{
     max-width: 100%;
   }
+  .card:nth-child(2) .card-body{    /* !!! special rule for not let the 2nd card stretch based on her content ------- media query reset on 991px */
+    flex-basis: calc(100%/6 - 30px);
+  }
   .card{
-    flex-basis: calc(100%/4 - 30px);
+    flex-basis: calc(100%/2 - 30px);
   }
 }
-.card:nth-child(2) .card-body{    /* !!! special rule for not let the 2nd card stretch based on her content ------- media query reset on 991px */
-  flex-basis: calc(100%/6 - 30px);
-}
+
 
 /* 
 S-device
@@ -444,13 +453,4 @@ S-device
   .track-title{
     font-size: 12px;
   }
-  .card{
-    flex-basis: calc(100%/2 - 30px);
-  }
-  
-
-}
-
-@media screen and (max-width: 576.98px){
- 
 }
