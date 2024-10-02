@@ -21,13 +21,19 @@ a{
   text-decoration: none;
   color: currentColor;
 }
+
 ul{
   list-style: none;
 }
+
 button{
   background-color: transparent;
   color: currentColor;
   border: none;
+}
+
+section{
+  width: 100%;
 }
 
 /***************************************************
@@ -268,13 +274,17 @@ sidebar icons
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
 }
 
 /***************************************************
 main content
 ***************************************************/
-
+.upgrade{
+  height: 95px;
+  width: 100%;
+  background-color: var(--sidebar-color);
+  opacity: 0.5;
+}
 /* upgrade row style */
 .btn{
   display: inline-block;
@@ -306,15 +316,40 @@ main content
   padding: 5px 15px;
 }
 
-/*  */
 
-/* ? debug */
-.debug .upgrade{
-  height: 130px;
-  width: 100%;
-  background-color: var(--sidebar-color);
-  opacity: 0.5;
+/* recentliy played section */
+.recently-played>*{
+  padding: 18px;
 }
+
+/* collections */
+.collections{
+  flex-wrap: wrap;
+  display: flex;
+}
+
+/* 
+card style
+*/
+.card>*{
+  margin-bottom: 15px;
+}
+.card{
+  font-size: 14px;
+  margin-right: 30px;
+  flex-basis: calc(100%/6 - 30px);
+  aspect-ratio: 1/1;
+  text-align: center;
+}
+.card-title{
+  margin-bottom: 5px;
+}
+
+.card:nth-child(2) .card-body{    /* !!! special rule for not let the 2nd card stretch based on her content ------- media query reset on 991px */
+  max-width: 300px;
+}
+/* ? debug */
+
 
 /***************************
 media query 
@@ -335,7 +370,9 @@ L-device
 @media screen and (max-width: 1199.98px) {
   .debug .navbar{
     max-width: 100%;
-   }
+  }
+ 
+   
 }
 
 /* 
@@ -344,14 +381,24 @@ M-device
 @media screen and (max-width: 991.98px) {
   .debug .navbar{
     max-width: 100%;
-   }
+  }
+  .card{
+    flex-basis: calc(100%/4 - 30px);
+  }
+}
+.card:nth-child(2) .card-body{    /* !!! special rule for not let the 2nd card stretch based on her content ------- media query reset on 991px */
+  flex-basis: calc(100%/6 - 30px);
 }
 
 /* 
 S-device
 */
-@media screen and (max-width: 639.98px) {
-  .xs-swap{
+@media screen and (max-width: 768.98px) {
+  .debug .navbar{
+    max-width: 100%;
+  }
+ 
+   .xs-swap{
     display: block;
   }
   .xs-hidden{
@@ -397,4 +444,13 @@ S-device
   .track-title{
     font-size: 12px;
   }
+  .card{
+    flex-basis: calc(100%/2 - 30px);
+  }
+  
+
+}
+
+@media screen and (max-width: 576.98px){
+ 
 }
