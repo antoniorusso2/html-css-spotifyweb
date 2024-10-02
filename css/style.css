@@ -45,7 +45,19 @@ custom properties
 .uppercase{
   text-transform: uppercase;
 }
+
 /* main rules */
+.page-wrap{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.content{
+  flex-grow: 1;
+  display: flex;
+}
+
+
 
 /* 
 logo
@@ -64,26 +76,32 @@ logo
   width: 100%;
 }
 
-/* 
-page
-*/
-.page-wrap{
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.content{
-  flex-grow: 1;
-  display: flex;
-}
+/* media player */
 .media-player{
   width: 100%;
-  height: 90px;
+  padding: 10px;
   /* position: fixed; */
-  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.track-progress{
+  flex-grow: 1;
+}
+.now-playing{
+  padding: 0 12px;
+  width: 230px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.now-playing img{
+  width: 42px;
+  aspect-ratio: 1;
 }
 
+.track-title{
+  flex-grow: 1;
+}
 /* sidebar*/
 .logo-sm{
   width: 40px;
@@ -94,6 +112,7 @@ page
   width: 230px;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 }
 .sidebar>*{
   padding: 1.2rem;
@@ -179,7 +198,43 @@ sidebar icons
   padding: 0.4rem;
 }
 
+/* music section */
+.music-select{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
+.navbar{
+  column-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.debug .navbar{
+  background-color: aqua;
+}
+
+.debug .player-track, 
+.debug .track-progress,
+.debug .audio-settings {
+ border: 2px solid palevioletred;
+}
+
+
+.debug .subscribe{
+  text-align: right;
+  width: 100%;
+  padding: 3rem 1rem;
+  background-color: bisque;
+}
+
+
+.debug .audio-settings{
+  width: 200px;
+}
 /***************************
 media query 
 ****************************/
@@ -188,28 +243,36 @@ media query
 XL-device
 */
 @media screen and (min-width: 1399.98px) {
- 
+ .debug .navbar{
+  max-width: 100%;
+ }
 }
 
 /* 
 L-device
 */
 @media screen and (max-width: 1199.98px) {
-  
+  .debug .navbar{
+    max-width: 100%;
+   }
 }
 
 /* 
 M-device
 */
 @media screen and (max-width: 991.98px) {
-  
+  .debug .navbar{
+    max-width: 100%;
+   }
 }
 
 /* 
 S-device
 */
 @media screen and (max-width: 767.98px) {
-  
+  .debug .navbar{
+    max-width: 100%;
+   }
 }
 
 /* 
