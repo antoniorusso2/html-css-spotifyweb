@@ -240,7 +240,6 @@ media player
 left
 */
 .now-playing{
-  
   width: 230px;
   display: flex;
   align-items: center;
@@ -550,23 +549,20 @@ S-device
   .debug .navbar{
     max-width: 100%;
   }
- 
-   .xs-swap{
-    display: block;
-  }
+  
   .xs-hidden{
     display: none;
   }
+   .xs-swap{
+    display: block;
+  }
+  
   .sidebar{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50px;
     padding: 5px;
-  }
-  .sidebar .user-menu,
-  .sidebar .sidebar-footer{
-    padding: 1rem 0;
   }
 
   .logo{
@@ -591,10 +587,30 @@ S-device
   }
 
   /* media player left side */
-  .track{
-    width: 24px;
-  }
+
   .track-title{
     font-size: 12px;
+  }
+
+  .user-menu,
+  .playlist-menu,
+  .sidebar-footer{
+
+    >*{
+      padding: 0;
+    }
+  }
+  .user-icons:hover::before{
+    display: none;
+  }
+  
+}
+
+@media screen and (max-width: 626.98px){
+  .track-title{
+    display: none;
+  }
+  .xs-hidden{
+    display: none;
   }
 }
