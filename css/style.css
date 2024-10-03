@@ -173,6 +173,7 @@ song time
 
 /* sidebar*/
 .sidebar{
+  color:white;
   background-color: var(--sidebar-color) ;
   width: 230px;
   display: flex;
@@ -227,7 +228,6 @@ sidebar icons
 }
 .user-menu a{
   width: 100%;
-  color: var(--grey-text);
   display: flex;
   align-items: center;
   column-gap: 5px;
@@ -257,7 +257,7 @@ sidebar icons
 .playlist-menu>*{
   margin-bottom: 15px;
 }
-.playlist-menu ul>.playlist-link{
+.playlist-menu ul> li{
   margin-top: 25px;
 }
 
