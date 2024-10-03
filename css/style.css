@@ -81,7 +81,10 @@ custom properties
   display: flex;
 }
 
-/* hover features */
+/* !hover features */
+/* 
+sidebar
+*/
 .add-btn,
 .playlist-menu li,
 .user-icons{
@@ -122,6 +125,36 @@ custom properties
   width: 50px;
   margin-inline: auto;
 }
+
+/* 
+cards
+*/
+.card-head{
+  position: relative;
+}
+.play-hover{
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 50%;
+  top:50%;
+  transform: translate(50%, -50%);
+}
+.play-hover i{
+  font-size: 60px;
+}
+.card-head:hover .overlay{
+  opacity: 0.5;
+}
+.card-head:hover .play-hover{
+  display: block;
+}
+
+/* pointer cursor on icons */
+.media-player i{
+  cursor: pointer;
+}
+
 
 /***************************************************
 media player sidebars
