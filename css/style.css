@@ -125,6 +125,50 @@ sidebar
   width: 50px;
   margin-inline: auto;
 }
+/* 
+media player
+*/
+.big-btn{
+  position: relative;
+  width: 52px;
+  height: 33px;
+}
+
+.big-btn>i{
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.big-btn i:hover{
+  font-size: 45px;
+}
+
+/* 
+progress bar dot
+*/
+.progress{
+  position: relative;
+}
+.dot:hover{
+  padding: 10px;
+}
+.dot{
+  cursor: pointer;
+  padding: 5px;
+  aspect-ratio: 1/1;
+  display: block;
+  background-color: greenyellow;
+  border-radius: 999px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+.volume .dot{
+  background-color: #ffffff;
+}
 
 /* 
 cards
@@ -164,6 +208,16 @@ media player sidebars
   background-color: var(--grey-text);
   height: 3px;
   width: 120px;
+}
+
+.progress{
+  background-color: #c1c1c1;
+  height: 3px;
+  width: 15%;
+}
+
+.volume .progress{
+  width: 80%;
 }
 
 /***************************************************
@@ -216,7 +270,6 @@ center
   font-size: 24px;
 }
 .fa-circle-play{
-  margin: 0 10px;
   font-size: 32px;
 }
 /* 
