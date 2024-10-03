@@ -479,6 +479,9 @@ section>div{
 /* 
 card style
 */
+.card-head img{
+  margin: 0 auto;
+}
 .card>*{
   margin-bottom: 15px;
 }
